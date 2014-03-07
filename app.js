@@ -1,1 +1,1 @@
-require('sails').lift();
+require('sails').lift(require('optimist').argv);

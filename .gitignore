@@ -22,7 +22,9 @@ lib-cov
 pids
 logs
 results
-node-modules
+
+node_modules
+
 npm-debug.log
 
 
@@ -46,5 +48,4 @@ config/local.js
 ########################
 # assets
 ########################
-config/local.js
-public/sounds
+public/sound

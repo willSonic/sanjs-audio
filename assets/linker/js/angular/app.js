@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ['ui.router', 'appServices', 'contenteditable', 'ngSails', 'ngAnimate', 'notifications', 'angularFileUpload', 'ngDragDrop', 'ngCookies', 'ui.bootstrap', 'truncate']);
+var myApp = angular.module("myApp", ['ui.router', 'contenteditable', 'ngSails', 'ngAnimate', 'notifications', 'angularFileUpload', 'ngDragDrop', 'ngCookies', 'ui.bootstrap', 'truncate']);
 	myApp.run(
       [        '$rootScope', '$state', '$stateParams', '$location', '$http', '$cookies',
       function ($rootScope,   $state,   $stateParams, $location, $http, $cookies) {
@@ -22,8 +22,6 @@ var myApp = angular.module("myApp", ['ui.router', 'appServices', 'contenteditabl
                 // Sails sends us csrftoken with each request, we send back the same token as part of our request header
                 $httpProvider.defaults.xsrfCookieName = 'csrftoken';
                 $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-Token';
-
-
 
                 $urlRouterProvider.otherwise('/');
 

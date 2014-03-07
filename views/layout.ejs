@@ -31,6 +31,7 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/linker/styles/lib/notification.css">
     <link rel="stylesheet" href="/linker/styles/custom.css">
     <link rel="stylesheet" href="/linker/styles/customAnimations.css">
     <link rel="stylesheet" href="/linker/styles/fbSpinner.css">
@@ -43,11 +44,9 @@
     <link rel="stylesheet" href="/linker/styles/lib/bootstrap/font-awesome.css">
     <link rel="stylesheet" href="/linker/styles/lib/ng-animation.css">
     <link rel="stylesheet" href="/linker/styles/offcanvas.css">
+    <link rel="stylesheet" href="/linker/styles/uploadPanel.css">
     <!--STYLES END-->
 
-    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
-    
-    
   </head>
 
   <body  ng-controller="rootCtrl">
@@ -57,9 +56,6 @@
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
       <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" ui-sref="home">NocSonic</a>
     <!--<a class="navbar-brand" ui-sref="home">MyCoach</a>-->
@@ -148,15 +144,14 @@
     <script src="/linker/js/lib/bootstrap/bootstrap.js"></script>
     <script src="/linker/js/angular/app.js"></script>
     <script src="/linker/js/angular/controllers/RootController.js"></script>
-    <script src="/linker/js/angular/services.js"></script>
-    <script src="/linker/js/angular/states/FoodStates.js"></script>
-    <script src="/linker/js/angular/states/SessionStates.js"></script>
-    <script src="/linker/js/angular/states/UserStates.js"></script>
+    <script src="/linker/js/angular/directives/LoadingIndicatorDirective.js"></script>
     <script src="/linker/js/bootstrap/navbarFix.js"></script>
     <script src="/linker/js/lib/angular/angular-cookies.js"></script>
     <script src="/linker/js/lib/angular/raw.github.com/angular-ui/ui-router/master/release/angular-ui-router.js"></script>
     <script src="/linker/js/lib/angular/truncate.js"></script>
     <script src="/linker/js/lib/angular/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="/linker/js/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/linker/js/lib/rtc/audio-html5-rocks.js"></script>
     <script src="/linker/js/lib/underscore/underscore.js"></script>
     <!--SCRIPTS END-->
   

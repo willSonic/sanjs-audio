@@ -87,6 +87,9 @@ module.exports = function (grunt) {
         'linker/**/*.js'
     ];
 
+    var jsFileToExclude = [
+        '!/linker/js/lib/rtc/**'
+    ];
 
     /**
      * Client-side HTML templates are injected using the sources below
@@ -99,8 +102,9 @@ module.exports = function (grunt) {
      */
 
     var templateFilesToInject = [
-        'linker/**/*.html'
+        'linker/**/*.html',  '!linker/js/lib/rtc/**'
     ];
+
 
 
 
@@ -169,8 +173,9 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: './assets',
-                        src: ['**/*.!(coffee)'],
+                        src: ['**/*.!(coffee)' ,'!**/rtc/**'],
                         dest: '.tmp/public'
+
                     }
                 ]
             },
@@ -187,7 +192,7 @@ module.exports = function (grunt) {
         },
 
         clean: {
-            dev: ['.tmp/public/**'],
+            dev: '.tmp/public/**',
             build: ['www']
         },
 
@@ -252,7 +257,7 @@ module.exports = function (grunt) {
 
         concat: {
             js: {
-                src: jsFilesToInject,
+                src: [jsFilesToInject],
                 dest: '.tmp/public/concat/production.js'
             },
             css: {

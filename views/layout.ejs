@@ -102,8 +102,10 @@
     <!--TEMPLATES END-->
 
 <footer  class="dsktp-footer">
-    <div id="sonic-masher"  ng-controller="MarqueeAMTCtrl">
-        <billboard> </billboard>
+    <div id="sonic-masher">
+        <audioPlayer>
+             <div ng-include="templates/sonic_masher/audioplayer.tpl.html" ng-controller="sonicmasherCtrl">  </div>
+        </audioPlayer>
     </div>
 </footer>
 
@@ -149,14 +151,17 @@
     <script src="/linker/js/lib/bootstrap/bootstrap.js"></script>
     <script src="/linker/js/angular/app.js"></script>
     <script src="/linker/js/angular/controllers/RootController.js"></script>
+    <script src="/linker/js/angular/controllers/SonicmasherController.js"></script>
     <script src="/linker/js/angular/directives/LoadingIndicatorDirective.js"></script>
+    <script src="/linker/js/angular/directives/directive.js"></script>
+    <script src="/linker/js/angular/directives/helpers.js"></script>
     <script src="/linker/js/bootstrap/navbarFix.js"></script>
     <script src="/linker/js/lib/angular/angular-cookies.js"></script>
+    <script src="/linker/js/lib/angular/libs.js"></script>
     <script src="/linker/js/lib/angular/raw.github.com/angular-ui/ui-router/master/release/angular-ui-router.js"></script>
     <script src="/linker/js/lib/angular/truncate.js"></script>
     <script src="/linker/js/lib/angular/ui-bootstrap-tpls-0.10.0.js"></script>
     <script src="/linker/js/lib/jquery/jquery-1.10.2.min.js"></script>
-    <script src="/linker/js/lib/rtc/audio-html5-rocks.js"></script>
     <script src="/linker/js/lib/underscore/underscore.js"></script>
     <!--SCRIPTS END-->
   

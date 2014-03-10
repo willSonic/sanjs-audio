@@ -1,6 +1,6 @@
-var myApp = angular.module("myApp", ['ui.router', 'contenteditable', 'ngSails', 'ngAnimate', 'notifications', 'angularFileUpload', 'ngDragDrop', 'ngCookies', 'ui.bootstrap', 'truncate','sonicmacherCtrl']);
+var myApp = angular.module("myApp", ['ui.router', 'audioPlayer', 'contenteditable', 'ngSails', 'ngAnimate', 'notifications','angularFileUpload', 'ngDragDrop', 'ngCookies', 'ui.bootstrap', 'truncate']);
 	myApp.run(
-      [        '$rootScope', '$state', '$stateParams', '$location', '$http', '$cookies',
+      ['$rootScope', '$state', '$stateParams', '$location', '$http', '$cookies',
       function ($rootScope,   $state,   $stateParams, $location, $http, $cookies) {
 
         // It's very handy to add references to $state and $stateParams to the $rootScope

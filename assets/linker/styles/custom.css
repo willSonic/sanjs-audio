@@ -145,4 +145,11 @@ more here: http://www.jonathanrowny.com/journal/angularjs-smooth-fading-after-da
 	background-color: #E6E8E8;
 }
 
+/*Will's additions */
+
+.dsktp-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 

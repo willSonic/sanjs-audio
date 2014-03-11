@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 
         // Below, as a demonstration, you'll see the built-in dependencies
         // linked in the proper order order
-        'linker/js/lib/jquery/jquery-1.10.2.js',
+        'linker/js/lib/jquery/jquery-1.10.2.min.js',
         'linker/js/lib/jquery/jquery-ui.js',
         'linker/js/lib/jquery/jquery.ui.touch-punch.js',
         // Bring in the socket.io client
@@ -71,8 +71,7 @@ module.exports = function (grunt) {
         'linker/js/lib/angular/angular-ui-router.js',
         'linker/js/lib/angular/angular-resource.js',
         'linker/js/lib/angular/angular-sails.js',
-        'linker/js/lib/angular/angular-contenteditable.js',
-        'linker/js/lib/angular/notification.js',
+        'linker/js/lib/angular/angular-audio-player.js',
         'linker/js/lib/angular/angular-animate.js',
         'linker/js/lib/angular/ng-file-upload/*.js',
         'linker/js/lib/bootstrap/bootstrap.js',
@@ -89,6 +88,7 @@ module.exports = function (grunt) {
 
     var jsFileToExclude = [
         '!/linker/js/lib/rtc/**'
+
     ];
 
     /**
@@ -102,7 +102,7 @@ module.exports = function (grunt) {
      */
 
     var templateFilesToInject = [
-        'linker/**/*.html',  '!linker/js/lib/rtc/**'
+        'linker/**/*.html', "templates/**/*.html", '!linker/js/lib/rtc/**'
     ];
 
 

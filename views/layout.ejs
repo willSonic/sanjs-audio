@@ -100,9 +100,10 @@
     <!--TEMPLATES END-->
 
 <footer  class="dsktp-footer">
-   <div id="sonic-masher" ng-controller="sonicmasherCtrl">
-            <div ng-include=" 'templates/sonicmasher/audioplayer.tpl.html' ">  </div>
-   </div>
+     <div id="sonic-masher" class="masher-basket" ng-controller="sonicmasherCtrl">
+         <div id="masher-menu"> <button type="button" class="btn btn-primary pull-left">Beats</button> </div>
+         <div ng-include=" 'templates/sonicmasher/audioplayer.tpl.html' "></div>
+    </div>
 </footer>
 
    <!--
@@ -145,8 +146,10 @@
     <script src="/linker/js/lib/angular/ng-file-upload/angular-file-upload.js"></script>
     <script src="/linker/js/lib/bootstrap/bootstrap.js"></script>
     <script src="/linker/js/angular/app.js"></script>
+    <script src="/linker/js/angular/controllers/CliplistController.js"></script>
     <script src="/linker/js/angular/controllers/RootController.js"></script>
     <script src="/linker/js/angular/controllers/SonicmasherController.js"></script>
+    <script src="/linker/js/angular/services.js"></script>
     <script src="/linker/js/bootstrap/navbarFix.js"></script>
     <script src="/linker/js/lib/angular/angular-cookies.js"></script>
     <script src="/linker/js/lib/angular/raw.github.com/angular-ui/ui-router/master/release/angular-ui-router.js"></script>

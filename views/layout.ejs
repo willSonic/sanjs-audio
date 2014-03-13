@@ -101,7 +101,9 @@
 
 <footer  class="dsktp-footer">
      <div id="sonic-masher" class="masher-basket" ng-controller="sonicmasherCtrl">
-         <div id="masher-menu"> <button type="button" class="btn btn-primary pull-left">Beats</button> </div>
+         <div id="masher-menu">
+               <button type="button" class="btn btn-primary pull-left">Beats</button>
+         </div>
          <div ng-include=" 'templates/sonicmasher/audioplayer.tpl.html' "></div>
     </div>
 </footer>
@@ -148,7 +150,7 @@
     <script src="/linker/js/angular/app.js"></script>
     <script src="/linker/js/angular/controllers/CliplistController.js"></script>
     <script src="/linker/js/angular/controllers/RootController.js"></script>
-    <script src="/linker/js/angular/controllers/SonicmasherController.js"></script>
+    <script src="/linker/js/angular/controllers/SonicMasherController.js"></script>
     <script src="/linker/js/angular/services.js"></script>
     <script src="/linker/js/bootstrap/navbarFix.js"></script>
     <script src="/linker/js/lib/angular/angular-cookies.js"></script>

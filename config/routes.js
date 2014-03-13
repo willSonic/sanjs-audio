@@ -37,9 +37,9 @@ module.exports.routes = {
   },
 
 
-  'get /audioBeatFiles/**/*': {
-        controller: 'AudiobeatfileController',
-        action: 'get'
+  'get /audiobeatfile': {
+        controller: 'audiobeatfile',
+        action: 'check'
   }
   /*
   // But what if you want your home page to display

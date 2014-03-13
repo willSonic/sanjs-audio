@@ -17,23 +17,26 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+
 module.exports = {
     check: function(req, res) { //called on every app start or when browser is refreshed
-            Audiobeatfile.find('rapbeat', function foundAudiobeatfile(err, beats){
+            Audiobeatfile.find('rap', function foundAudiobeatfile(err, beats){
                 if(err){
                     Audiobeatfile.create({
-                        audiobeatfile_genre:'rapbeat',
-                        audiobeatfile_name:'rapbeat',
-                        audiobeatfile_path:'rapbeat',
-                        audiobeatfile_type:'rapbeat',
-                        audiobeatfile_size:'rapbeat',
-                        audiobeatfile_format:'rapbeat',
-                        audiobeatfile_cdn_url:'rapbeat',
-                        title:'rapbeat',
-                        description:'rapbeat'
+                        audiobeatfile_id:"1",
+                        audiobeatfile_genre:'rap',
+                        audiobeatfile_name:'2short.mp3',
+                        audiobeatfile_path:'public/audio/clips/rap/2short.mp3',
+                        audiobeatfile_type:'audio',
+                        audiobeatfile_size:'167kb',
+                        audiobeatfile_format:'mp3',
+                        audiobeatfile_cdn_url:'public/audio/clips/rap/2short.mp3',
+                        title:'2short',
+                        description:'old skool rap beat'
                     });
+                    res.send(401);
                 }else{
-
+                    res.send(401);
                 }
             });
     },

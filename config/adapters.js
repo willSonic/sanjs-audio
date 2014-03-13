@@ -7,7 +7,7 @@ module.exports.adapters = {
 
   
   disk: {
-    module: 'sails-dirty',
+    module: 'sails-disk',
     filePath: './.tmp/dirty.db',
     inMemory: true
   }

@@ -19,26 +19,47 @@
 
 
 module.exports = {
+    // This enables us to access files from the '/public/images/' directory as defined in our routes.js (config)
+    // We should be able to use this to access files from any directory provided we specify the directory in routes.js
+    get: function (req, res) {
+        console.log(req.path);
+        console.log(req.path.substr(1));
+        var maxAge = 365*24*60*60 //Sets the cache to expire a year from now
+
+        res.setHeader('Cache-Control', "'public, max-age="+maxAge+"'");
+        res.setHeader("Expires", new Date(Date.now() + 31536000000).toUTCString());
+        res.sendfile(req.path.substr(1));
+    },
+
     check: function(req, res) { //called on every app start or when browser is refreshed
-            Audiobeatfile.find('rap', function foundAudiobeatfile(err, beats){
-                if(err){
-                    Audiobeatfile.create({
-                        audiobeatfile_id:"1",
-                        audiobeatfile_genre:'rap',
-                        audiobeatfile_name:'2short.mp3',
-                        audiobeatfile_path:'public/audio/clips/rap/2short.mp3',
-                        audiobeatfile_type:'audio',
-                        audiobeatfile_size:'167kb',
-                        audiobeatfile_format:'mp3',
-                        audiobeatfile_cdn_url:'public/audio/clips/rap/2short.mp3',
-                        title:'2short',
-                        description:'old skool rap beat'
-                    });
-                    res.send(401);
-                }else{
-                    res.send(401);
-                }
-            });
+            Audiobeatfile.find()
+                    .where({ audiobeatfile_genre: 'rap'})
+                    .exec(function(err, beats) {
+                         if(err || beats.length==0){
+                              var beatFile =  Audiobeatfile.create({
+                                                audiobeatfile_id:"1",
+                                                audiobeatfile_genre:'rap',
+                                                audiobeatfile_name:'2short.mp3',
+                                                audiobeatfile_path:'public/audio/clips/rap/2short.mp3',
+                                                audiobeatfile_type:'audio',
+                                                audiobeatfile_size:'167kb',
+                                                audiobeatfile_format:'mp3',
+                                                audiobeatfile_cdn_url:'public/audio/clips/rap/2short.mp3',
+                                                title:'2short',
+                                                description:'old skool rap beat'}
+                                              , function(err, audiobeatfile) {
+                                                    if (err){
+                                                           res.send(500);
+                                                    } else {
+
+                                                        res.json([audiobeatfile]);
+                                                    }
+
+                                                });
+                         }else{
+                             res.json(beats);
+                         }
+                });
     },
 
     //used for grabbing all records and individual records if a parameter is provided to food/:foodId

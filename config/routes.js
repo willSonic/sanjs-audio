@@ -37,7 +37,7 @@ module.exports.routes = {
   },
 
 
-  'get /audiobeatfile': {
+  'get /check': {
         controller: 'audiobeatfile',
         action: 'check'
   }

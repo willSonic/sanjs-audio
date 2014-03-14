@@ -1,7 +1,7 @@
 angular.module('appServices', ['ngResource'])
 
     .factory('Audiobeatfile', ['$resource', function($resource){
-        return $resource("/audiobeatfile/:action/:audiobeatfileId", {},
+        return $resource("/audiobeatfile/:action/", {},
             {
                 //These correspond to the actions defined in Sails
                 'index': { method:"GET", params: { 'action': 'index' }, isArray: true, cache: true},
@@ -10,7 +10,7 @@ angular.module('appServices', ['ngResource'])
                 'destroy': { method:'DELETE', params: {'action': 'destroy', 'beatId': '@id'}, isArray: false},
                 'create' : { method:'POST', params: {'action' : 'create'}, isArray: false},
                 //TODO: remove this ... only for adding data to the database
-                'check'  : { method: 'GET', params: {'action' : 'check'}, isArray: false}
+                'check'  : { method: 'GET', params: {'action' : 'check'}, isArray: true}
             }
         );
     }])
